@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const openApiKey = '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';
-const openApiUrl = 'https://api.openai.com/v1/chat/completions';
+const openApiUrl = '';
 
 const generateCL = async (inputData) => {
     try {
