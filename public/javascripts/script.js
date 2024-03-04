@@ -316,7 +316,10 @@ const hideTaskInput = () => {
 }
 
 // On submission we want to send the user input to server 
-submitBtn.addEventListener("click", function () {
+submitBtn.addEventListener("click", function (event) {
+
+    event.preventDefault();
+
     fetch('/', {
         method: 'POST',
         headers: {
@@ -327,7 +330,7 @@ submitBtn.addEventListener("click", function () {
         .then(response => response.json())
         .then(data => {
             console.log('Server response:', data);
-            // Clear accumulated tasks after successful submission
+            
             accumulatedTasks = [];
         })
         .catch(error => {
